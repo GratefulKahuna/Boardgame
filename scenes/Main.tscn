@@ -1,0 +1,697 @@
+[gd_scene load_steps=32 format=3 uid="uid://clsvl1lg2rkih"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_ip28x"]
+[ext_resource type="Texture2D" uid="uid://d2nnatd8qc6tx" path="res://images/Map_bg.png" id="2_8vh4i"]
+[ext_resource type="Texture2D" uid="uid://b6i21h64v607n" path="res://images/tiles/base_tile-modified.png" id="5_th7ui"]
+[ext_resource type="Texture2D" uid="uid://cm357ja3g16qx" path="res://images/dice_faces/die-1.png" id="5_uooe8"]
+[ext_resource type="Script" path="res://scenes/die_area.gd" id="6_62c75"]
+[ext_resource type="Texture2D" uid="uid://ds3eibuj2qupk" path="res://images/dice_faces/die-2.png" id="7_so4by"]
+[ext_resource type="Texture2D" uid="uid://wo1yvsa3qlwr" path="res://images/dice_faces/die-3.png" id="8_6rjk6"]
+[ext_resource type="Texture2D" uid="uid://i0r5a145mb1i" path="res://images/dice_faces/die-4.png" id="9_0wqja"]
+[ext_resource type="Texture2D" uid="uid://pagfak2q1jya" path="res://images/dice_faces/die-5.png" id="10_va3w2"]
+[ext_resource type="Texture2D" uid="uid://depleodktalnf" path="res://images/dice_faces/die-6.png" id="11_x7tpu"]
+[ext_resource type="Texture2D" uid="uid://cp5014x8ot34r" path="res://images/dice_faces/die-7.png" id="12_cw6jw"]
+[ext_resource type="Texture2D" uid="uid://dlc22blnbaixp" path="res://images/dice_faces/die-8.png" id="13_hx82k"]
+[ext_resource type="Texture2D" uid="uid://b3y7a88js04kk" path="res://images/dice_faces/die-9.png" id="14_p22nw"]
+[ext_resource type="Texture2D" uid="uid://p3a0nx4ttqbi" path="res://images/dice_faces/die-10.png" id="15_qg4p8"]
+[ext_resource type="Texture2D" uid="uid://b0dvc6ssy3v4p" path="res://images/dice_faces/die-11.png" id="16_lrxkc"]
+[ext_resource type="Texture2D" uid="uid://b1t25lc8gtbf1" path="res://images/dice_faces/die-12.png" id="17_plrni"]
+[ext_resource type="Script" path="res://scenes/tiles/Tile.gd" id="18_8c3lj"]
+[ext_resource type="Texture2D" uid="uid://dhwineqr2l5vq" path="res://images/tiles/numbers/1.png" id="19_i2wmj"]
+[ext_resource type="PackedScene" uid="uid://0xucpctqx5ay" path="res://Music/phase_1.tscn" id="20_igwwv"]
+[ext_resource type="Texture2D" uid="uid://b6gmy5kuvhwup" path="res://images/choose_dragged-removebg-preview.png" id="21_ip3yt"]
+[ext_resource type="PackedScene" uid="uid://did12mx6kpfpw" path="res://Music/phase_2.tscn" id="22_nm0ym"]
+[ext_resource type="Texture2D" uid="uid://1nui5n1ljtnx" path="res://images/Alarm_meter/cop.webp" id="23_2tufu"]
+[ext_resource type="PackedScene" uid="uid://1l0s2j334qxl" path="res://Music/phase_3.tscn" id="23_mri8g"]
+[ext_resource type="Texture2D" uid="uid://dplhjvdpd1u0m" path="res://images/Alarm_meter/Zz_clear.png" id="24_qmo2u"]
+[ext_resource type="Texture2D" uid="uid://bjcwbmpulwbdw" path="res://images/Alarm_meter/cop_outline-modified.png" id="25_f5vej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33fkc"]
+radius = 73.0
+
+[sub_resource type="FontFile" id="FontFile_wqxap"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytgew"]
+radius = 108.019
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vpix"]
+size = Vector2(198.5, 199.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ef7i"]
+radius = 260.419
+
+[sub_resource type="FontFile" id="FontFile_2pgo8"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ip28x")
+
+[node name="BoardBg" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+texture = ExtResource("2_8vh4i")
+
+[node name="Base_tile" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1313, 405)
+texture = ExtResource("5_th7ui")
+
+[node name="Die-1" type="Sprite2D" parent="."]
+position = Vector2(117, 755)
+texture = ExtResource("5_uooe8")
+
+[node name="die_area" type="Area2D" parent="Die-1"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-1/die_area"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-2" type="Sprite2D" parent="."]
+position = Vector2(304, 755)
+texture = ExtResource("7_so4by")
+
+[node name="die_area_2" type="Area2D" parent="Die-2"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-2/die_area_2"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-3" type="Sprite2D" parent="."]
+position = Vector2(493, 755)
+texture = ExtResource("8_6rjk6")
+
+[node name="die_area_3" type="Area2D" parent="Die-3"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-3/die_area_3"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-4" type="Sprite2D" parent="."]
+position = Vector2(685, 755)
+texture = ExtResource("9_0wqja")
+
+[node name="die_area_4" type="Area2D" parent="Die-4"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-4/die_area_4"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-5" type="Sprite2D" parent="."]
+position = Vector2(881, 755)
+texture = ExtResource("10_va3w2")
+
+[node name="die_area_5" type="Area2D" parent="Die-5"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-5/die_area_5"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-6" type="Sprite2D" parent="."]
+position = Vector2(1068, 755)
+texture = ExtResource("11_x7tpu")
+
+[node name="die_area_6" type="Area2D" parent="Die-6"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-6/die_area_6"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-7" type="Sprite2D" parent="."]
+position = Vector2(115, 952)
+texture = ExtResource("12_cw6jw")
+
+[node name="die_area_7" type="Area2D" parent="Die-7"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-7/die_area_7"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-8" type="Sprite2D" parent="."]
+position = Vector2(306, 952)
+texture = ExtResource("13_hx82k")
+
+[node name="die_area_8" type="Area2D" parent="Die-8"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-8/die_area_8"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-9" type="Sprite2D" parent="."]
+position = Vector2(495, 952)
+texture = ExtResource("14_p22nw")
+
+[node name="die_area_9" type="Area2D" parent="Die-9"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-9/die_area_9"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-10" type="Sprite2D" parent="."]
+position = Vector2(688, 952)
+texture = ExtResource("15_qg4p8")
+
+[node name="die_area_10" type="Area2D" parent="Die-10"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-10/die_area_10"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-11" type="Sprite2D" parent="."]
+position = Vector2(880, 952)
+texture = ExtResource("16_lrxkc")
+
+[node name="die_area_11" type="Area2D" parent="Die-11"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-11/die_area_11"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Die-12" type="Sprite2D" parent="."]
+position = Vector2(1072, 952)
+texture = ExtResource("17_plrni")
+
+[node name="die_area_12" type="Area2D" parent="Die-12"]
+visible = false
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die-12/die_area_12"]
+shape = SubResource("CircleShape2D_33fkc")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 98.0
+offset_top = 138.0
+offset_right = 1154.0
+offset_bottom = 476.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontFile_wqxap")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+fit_content = true
+
+[node name="choose_dragged" type="Sprite2D" parent="."]
+visible = false
+z_index = 6
+position = Vector2(636, 415)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_ip3yt")
+
+[node name="Notarbartolo_choice" type="Area2D" parent="choose_dragged"]
+position = Vector2(-485.5, -256)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="choose_dragged/Notarbartolo_choice"]
+position = Vector2(401, 519)
+shape = SubResource("CircleShape2D_ytgew")
+
+[node name="Genius_choice" type="Area2D" parent="choose_dragged"]
+position = Vector2(-485.5, -256)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="choose_dragged/Genius_choice"]
+position = Vector2(686, 518)
+shape = SubResource("CircleShape2D_ytgew")
+
+[node name="Speedy_choice" type="Area2D" parent="choose_dragged"]
+position = Vector2(-485.5, -256)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="choose_dragged/Speedy_choice"]
+position = Vector2(975, 519)
+shape = SubResource("CircleShape2D_ytgew")
+
+[node name="King_of_keys_choice" type="Area2D" parent="choose_dragged"]
+position = Vector2(-485.5, -256)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="choose_dragged/King_of_keys_choice"]
+position = Vector2(1256, 525)
+shape = SubResource("CircleShape2D_ytgew")
+
+[node name="Nobody_choice" type="Area2D" parent="choose_dragged"]
+position = Vector2(-485.5, -256)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="choose_dragged/Nobody_choice"]
+position = Vector2(1522.75, 524.25)
+shape = SubResource("RectangleShape2D_8vpix")
+
+[node name="Opera" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Opera"]
+polygon = PackedVector2Array(1409, 75, 1488, 68, 1480, 231, 1364, 228, 1400, 144)
+
+[node name="1" type="Sprite2D" parent="Opera"]
+position = Vector2(1439, 152)
+texture = ExtResource("19_i2wmj")
+
+[node name="Cinema" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cinema"]
+polygon = PackedVector2Array(1505, 64, 1545, 61, 1583, 47, 1586, 232, 1498, 235)
+
+[node name="1" type="Sprite2D" parent="Cinema"]
+position = Vector2(1545, 150)
+texture = ExtResource("19_i2wmj")
+
+[node name="Casino" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Casino"]
+polygon = PackedVector2Array(1604, 18, 1645, 15, 1676, 5, 1715, 50, 1724, 106, 1712, 137, 1603, 133)
+
+[node name="1" type="Sprite2D" parent="Casino"]
+position = Vector2(1657, 78)
+texture = ExtResource("19_i2wmj")
+
+[node name="Cafe" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cafe"]
+polygon = PackedVector2Array(1719, 3, 1823, 8, 1826, 150, 1750, 153, 1726, 139, 1737, 60)
+
+[node name="1" type="Sprite2D" parent="Cafe"]
+position = Vector2(1781, 75)
+texture = ExtResource("19_i2wmj")
+
+[node name="Computer store" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Computer store"]
+polygon = PackedVector2Array(1603, 146, 1602, 237, 1730, 236, 1723, 183, 1693, 155)
+
+[node name="1" type="Sprite2D" parent="Computer store"]
+position = Vector2(1659, 192)
+texture = ExtResource("19_i2wmj")
+
+[node name="Casino2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Casino2"]
+polygon = PackedVector2Array(1720, 152, 1771, 165, 1835, 164, 1838, 245, 1773, 247, 1740, 229)
+
+[node name="1" type="Sprite2D" parent="Casino2"]
+position = Vector2(1784, 202)
+texture = ExtResource("19_i2wmj")
+
+[node name="Office" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Office"]
+polygon = PackedVector2Array(1365, 244, 1488, 245, 1426, 376, 1318, 330)
+
+[node name="1" type="Sprite2D" parent="Office"]
+position = Vector2(1400, 297)
+texture = ExtResource("19_i2wmj")
+
+[node name="Bar" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bar"]
+polygon = PackedVector2Array(1313, 340, 1418, 383, 1345, 502, 1243, 438)
+
+[node name="1" type="Sprite2D" parent="Bar"]
+position = Vector2(1330, 409)
+texture = ExtResource("19_i2wmj")
+
+[node name="Gold smith" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gold smith"]
+polygon = PackedVector2Array(1511, 245, 1587, 243, 1533, 351, 1527, 383, 1445, 378)
+
+[node name="1" type="Sprite2D" parent="Gold smith"]
+position = Vector2(1506, 322)
+texture = ExtResource("19_i2wmj")
+
+[node name="Jeweler" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jeweler"]
+polygon = PackedVector2Array(1441, 388, 1528, 389, 1533, 557, 1392, 578, 1377, 551, 1350, 532)
+
+[node name="1" type="Sprite2D" parent="Jeweler"]
+position = Vector2(1463, 480)
+texture = ExtResource("19_i2wmj")
+
+[node name="Diamond dealer" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Diamond dealer"]
+polygon = PackedVector2Array(1596, 245, 1580, 291, 1655, 324, 1741, 378, 1807, 421, 1831, 423, 1841, 362, 1821, 255)
+
+[node name="1" type="Sprite2D" parent="Diamond dealer"]
+position = Vector2(1751, 314)
+texture = ExtResource("19_i2wmj")
+
+[node name="Hotel" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hotel"]
+polygon = PackedVector2Array(1574, 305, 1538, 356, 1542, 446, 1675, 409, 1710, 371, 1650, 326)
+
+[node name="1" type="Sprite2D" parent="Hotel"]
+position = Vector2(1606, 368)
+texture = ExtResource("19_i2wmj")
+
+[node name="Antwerp world diamond centre" type="Area2D" parent="."]
+position = Vector2(1612, 509)
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Antwerp world diamond centre"]
+polygon = PackedVector2Array(-70, -51, 52, -82, 81, 11, 111, 47, 137, 64, -94, 67, -69, 48)
+
+[node name="Bank" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bank"]
+polygon = PackedVector2Array(1670, 418, 1712, 398, 1722, 374, 1806, 431, 1828, 433, 1838, 477, 1835, 543, 1785, 565, 1732, 552, 1695, 506)
+
+[node name="1" type="Sprite2D" parent="Bank"]
+position = Vector2(1761, 474)
+texture = ExtResource("19_i2wmj")
+
+[node name="Gallery" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gallery"]
+polygon = PackedVector2Array(1380, 595, 1496, 580, 1518, 598, 1511, 744, 1390, 722)
+
+[node name="1" type="Sprite2D" parent="Gallery"]
+position = Vector2(1453, 654)
+texture = ExtResource("19_i2wmj")
+
+[node name="Police station" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Police station"]
+polygon = PackedVector2Array(1531, 598, 1778, 597, 1817, 572, 1828, 577, 1822, 688, 1792, 696, 1701, 683, 1664, 669, 1617, 685, 1536, 683)
+
+[node name="1" type="Sprite2D" parent="Police station"]
+position = Vector2(1681, 634)
+texture = ExtResource("19_i2wmj")
+
+[node name="Gold dealer" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gold dealer"]
+polygon = PackedVector2Array(1533, 691, 1521, 766, 1810, 784, 1825, 711, 1714, 704, 1667, 683, 1576, 696)
+
+[node name="1" type="Sprite2D" parent="Gold dealer"]
+position = Vector2(1661, 728)
+texture = ExtResource("19_i2wmj")
+
+[node name="Jewelry store" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jewelry store"]
+polygon = PackedVector2Array(1392, 739, 1459, 742, 1515, 767, 1510, 847, 1469, 862, 1400, 857)
+
+[node name="1" type="Sprite2D" parent="Jewelry store"]
+position = Vector2(1450, 801)
+texture = ExtResource("19_i2wmj")
+
+[node name="Locksmith" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Locksmith"]
+polygon = PackedVector2Array(1527, 775, 1515, 866, 1636, 864, 1645, 799, 1613, 780)
+
+[node name="1" type="Sprite2D" parent="Locksmith"]
+position = Vector2(1576, 822)
+texture = ExtResource("19_i2wmj")
+
+[node name="Jewelry buyer" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jewelry buyer"]
+polygon = PackedVector2Array(1649, 783, 1771, 788, 1813, 804, 1823, 865, 1665, 881, 1646, 866, 1656, 824)
+
+[node name="1" type="Sprite2D" parent="Jewelry buyer"]
+position = Vector2(1734, 833)
+texture = ExtResource("19_i2wmj")
+
+[node name="Watch store" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Watch store"]
+polygon = PackedVector2Array(1400, 871, 1398, 938, 1429, 949, 1505, 951, 1558, 909, 1563, 876, 1511, 870, 1494, 863, 1437, 873)
+
+[node name="1" type="Sprite2D" parent="Watch store"]
+position = Vector2(1467, 912)
+texture = ExtResource("19_i2wmj")
+
+[node name="Community center" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Community center"]
+polygon = PackedVector2Array(1582, 878, 1579, 905, 1536, 939, 1536, 955, 1811, 956, 1813, 893, 1741, 882, 1669, 889)
+
+[node name="1" type="Sprite2D" parent="Community center"]
+position = Vector2(1691, 921)
+texture = ExtResource("19_i2wmj")
+
+[node name="Justice department" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Justice department"]
+polygon = PackedVector2Array(1403, 965, 1403, 1039, 1636, 1048, 1643, 1015, 1627, 1005, 1591, 1005, 1564, 1006, 1543, 993, 1514, 994, 1511, 968)
+
+[node name="1" type="Sprite2D" parent="Justice department"]
+position = Vector2(1467, 1002)
+texture = ExtResource("19_i2wmj")
+
+[node name="Synagogue" type="Area2D" parent="."]
+position = Vector2(1612, 509)
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Synagogue"]
+position = Vector2(-1611.3, -508.9)
+polygon = PackedVector2Array(1523, 962, 1524, 979, 1556, 983, 1562, 990, 1637, 996, 1649, 1010, 1655, 1053, 1832, 1059, 1827, 1034, 1816, 1015, 1815, 975, 1655, 968)
+
+[node name="1" type="Sprite2D" parent="Synagogue"]
+position = Vector2(124.7, 501.1)
+texture = ExtResource("19_i2wmj")
+
+[node name="Phase_1" parent="." instance=ExtResource("20_igwwv")]
+position = Vector2(989, 457)
+
+[node name="Phase_2" parent="." instance=ExtResource("22_nm0ym")]
+position = Vector2(980, 441)
+
+[node name="Phase_3" parent="." instance=ExtResource("23_mri8g")]
+position = Vector2(976, 437)
+
+[node name="Cop" type="Sprite2D" parent="."]
+position = Vector2(200, 570)
+scale = Vector2(0.394531, 0.384766)
+texture = ExtResource("23_2tufu")
+
+[node name="cop" type="Area2D" parent="Cop"]
+position = Vector2(-197, 88)
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cop/cop"]
+position = Vector2(209.673, -64.6091)
+shape = SubResource("CircleShape2D_5ef7i")
+
+[node name="Caution_level" type="RichTextLabel" parent="."]
+offset_left = 332.0
+offset_top = 549.0
+offset_right = 545.0
+offset_bottom = 616.0
+theme_override_fonts/normal_font = SubResource("FontFile_2pgo8")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="Cop_caution" type="Sprite2D" parent="."]
+position = Vector2(327, 472)
+texture = ExtResource("24_qmo2u")
+
+[node name="CopOutline-modified" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(203, 574)
+texture = ExtResource("25_f5vej")
+
+[connection signal="clicked" from="Die-1/die_area" to="." method="_on_die_area_clicked"]
+[connection signal="mouse_entered" from="Die-1/die_area" to="Die-1/die_area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-1/die_area" to="Die-1/die_area" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-2/die_area_2" to="." method="_on_die_area_2_clicked"]
+[connection signal="mouse_entered" from="Die-2/die_area_2" to="Die-2/die_area_2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-2/die_area_2" to="Die-2/die_area_2" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-3/die_area_3" to="." method="_on_die_area_3_clicked"]
+[connection signal="mouse_entered" from="Die-3/die_area_3" to="Die-3/die_area_3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-3/die_area_3" to="Die-3/die_area_3" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-4/die_area_4" to="." method="_on_die_area_4_clicked"]
+[connection signal="mouse_entered" from="Die-4/die_area_4" to="Die-4/die_area_4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-4/die_area_4" to="Die-4/die_area_4" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-5/die_area_5" to="." method="_on_die_area_5_clicked"]
+[connection signal="mouse_entered" from="Die-5/die_area_5" to="Die-5/die_area_5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-5/die_area_5" to="Die-5/die_area_5" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-6/die_area_6" to="." method="_on_die_area_6_clicked"]
+[connection signal="mouse_entered" from="Die-6/die_area_6" to="Die-6/die_area_6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-6/die_area_6" to="Die-6/die_area_6" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-7/die_area_7" to="." method="_on_die_area_7_clicked"]
+[connection signal="mouse_entered" from="Die-7/die_area_7" to="Die-7/die_area_7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-7/die_area_7" to="Die-7/die_area_7" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-8/die_area_8" to="." method="_on_die_area_8_clicked"]
+[connection signal="mouse_entered" from="Die-8/die_area_8" to="Die-8/die_area_8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-8/die_area_8" to="Die-8/die_area_8" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-9/die_area_9" to="." method="_on_die_area_9_clicked"]
+[connection signal="mouse_entered" from="Die-9/die_area_9" to="Die-9/die_area_9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-9/die_area_9" to="Die-9/die_area_9" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-10/die_area_10" to="." method="_on_die_area_10_clicked"]
+[connection signal="mouse_entered" from="Die-10/die_area_10" to="Die-10/die_area_10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-10/die_area_10" to="Die-10/die_area_10" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-11/die_area_11" to="." method="_on_die_area_11_clicked"]
+[connection signal="mouse_entered" from="Die-11/die_area_11" to="Die-11/die_area_11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-11/die_area_11" to="Die-11/die_area_11" method="_on_mouse_exited"]
+[connection signal="clicked" from="Die-12/die_area_12" to="." method="_on_die_area_12_clicked"]
+[connection signal="mouse_entered" from="Die-12/die_area_12" to="Die-12/die_area_12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Die-12/die_area_12" to="Die-12/die_area_12" method="_on_mouse_exited"]
+[connection signal="clicked" from="choose_dragged/Notarbartolo_choice" to="." method="_on_notarbartolo_choice_clicked"]
+[connection signal="mouse_entered" from="choose_dragged/Notarbartolo_choice" to="choose_dragged/Notarbartolo_choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="choose_dragged/Notarbartolo_choice" to="choose_dragged/Notarbartolo_choice" method="_on_mouse_exited"]
+[connection signal="clicked" from="choose_dragged/Genius_choice" to="." method="_on_genius_choice_clicked"]
+[connection signal="mouse_entered" from="choose_dragged/Genius_choice" to="choose_dragged/Genius_choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="choose_dragged/Genius_choice" to="choose_dragged/Genius_choice" method="_on_mouse_exited"]
+[connection signal="clicked" from="choose_dragged/Speedy_choice" to="." method="_on_speedy_choice_clicked"]
+[connection signal="mouse_entered" from="choose_dragged/Speedy_choice" to="choose_dragged/Speedy_choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="choose_dragged/Speedy_choice" to="choose_dragged/Speedy_choice" method="_on_mouse_exited"]
+[connection signal="clicked" from="choose_dragged/King_of_keys_choice" to="." method="_on_king_of_keys_choice_clicked"]
+[connection signal="mouse_entered" from="choose_dragged/King_of_keys_choice" to="choose_dragged/King_of_keys_choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="choose_dragged/King_of_keys_choice" to="choose_dragged/King_of_keys_choice" method="_on_mouse_exited"]
+[connection signal="clicked" from="choose_dragged/Nobody_choice" to="." method="_on_nobody_choice_clicked"]
+[connection signal="mouse_entered" from="choose_dragged/Nobody_choice" to="choose_dragged/Nobody_choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="choose_dragged/Nobody_choice" to="choose_dragged/Nobody_choice" method="_on_mouse_exited"]
+[connection signal="clicked" from="Opera" to="." method="_on_opera_clicked"]
+[connection signal="mouse_entered" from="Opera" to="Opera" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Opera" to="Opera" method="_on_mouse_exited"]
+[connection signal="clicked" from="Cinema" to="." method="_on_cinema_clicked"]
+[connection signal="mouse_entered" from="Cinema" to="Cinema" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cinema" to="Cinema" method="_on_mouse_exited"]
+[connection signal="clicked" from="Casino" to="." method="_on_casino_clicked"]
+[connection signal="mouse_entered" from="Casino" to="Casino" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Casino" to="Casino" method="_on_mouse_exited"]
+[connection signal="clicked" from="Cafe" to="." method="_on_cafe_clicked"]
+[connection signal="mouse_entered" from="Cafe" to="Cafe" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cafe" to="Cafe" method="_on_mouse_exited"]
+[connection signal="clicked" from="Computer store" to="." method="_on_computer_store_clicked"]
+[connection signal="mouse_entered" from="Computer store" to="Computer store" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Computer store" to="Computer store" method="_on_mouse_exited"]
+[connection signal="clicked" from="Casino2" to="." method="_on_casino_2_clicked"]
+[connection signal="mouse_entered" from="Casino2" to="Casino2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Casino2" to="Casino2" method="_on_mouse_exited"]
+[connection signal="clicked" from="Office" to="." method="_on_office_clicked"]
+[connection signal="mouse_entered" from="Office" to="Office" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Office" to="Office" method="_on_mouse_exited"]
+[connection signal="clicked" from="Bar" to="." method="_on_bar_clicked"]
+[connection signal="mouse_entered" from="Bar" to="Bar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bar" to="Bar" method="_on_mouse_exited"]
+[connection signal="clicked" from="Gold smith" to="." method="_on_gold_smith_clicked"]
+[connection signal="mouse_entered" from="Gold smith" to="Gold smith" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Gold smith" to="Gold smith" method="_on_mouse_exited"]
+[connection signal="clicked" from="Jeweler" to="." method="_on_jeweler_clicked"]
+[connection signal="mouse_entered" from="Jeweler" to="Jeweler" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jeweler" to="Jeweler" method="_on_mouse_exited"]
+[connection signal="clicked" from="Diamond dealer" to="." method="_on_diamond_dealer_clicked"]
+[connection signal="mouse_entered" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_exited"]
+[connection signal="clicked" from="Hotel" to="." method="_on_hotel_clicked"]
+[connection signal="mouse_entered" from="Hotel" to="Hotel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hotel" to="Hotel" method="_on_mouse_exited"]
+[connection signal="clicked" from="Antwerp world diamond centre" to="." method="_on_antwerp_world_diamond_centre_clicked"]
+[connection signal="mouse_entered" from="Antwerp world diamond centre" to="Antwerp world diamond centre" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Antwerp world diamond centre" to="Antwerp world diamond centre" method="_on_mouse_exited"]
+[connection signal="clicked" from="Bank" to="." method="_on_bank_clicked"]
+[connection signal="mouse_entered" from="Bank" to="Bank" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bank" to="Bank" method="_on_mouse_exited"]
+[connection signal="clicked" from="Gallery" to="." method="_on_gallery_clicked"]
+[connection signal="mouse_entered" from="Gallery" to="Gallery" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Gallery" to="Gallery" method="_on_mouse_exited"]
+[connection signal="clicked" from="Police station" to="." method="_on_police_station_clicked"]
+[connection signal="mouse_entered" from="Police station" to="Police station" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Police station" to="Police station" method="_on_mouse_exited"]
+[connection signal="clicked" from="Gold dealer" to="." method="_on_gold_dealer_clicked"]
+[connection signal="mouse_entered" from="Gold dealer" to="Gold dealer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Gold dealer" to="Gold dealer" method="_on_mouse_exited"]
+[connection signal="clicked" from="Jewelry store" to="." method="_on_jewelry_store_clicked"]
+[connection signal="mouse_entered" from="Jewelry store" to="Jewelry store" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jewelry store" to="Jewelry store" method="_on_mouse_exited"]
+[connection signal="clicked" from="Locksmith" to="." method="_on_locksmith_clicked"]
+[connection signal="mouse_entered" from="Locksmith" to="Locksmith" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Locksmith" to="Locksmith" method="_on_mouse_exited"]
+[connection signal="clicked" from="Jewelry buyer" to="." method="_on_jewelry_buyer_clicked"]
+[connection signal="mouse_entered" from="Jewelry buyer" to="Jewelry buyer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jewelry buyer" to="Jewelry buyer" method="_on_mouse_exited"]
+[connection signal="clicked" from="Watch store" to="." method="_on_watch_store_clicked"]
+[connection signal="mouse_entered" from="Watch store" to="Watch store" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Watch store" to="Watch store" method="_on_mouse_exited"]
+[connection signal="clicked" from="Community center" to="." method="_on_community_center_clicked"]
+[connection signal="mouse_entered" from="Community center" to="Community center" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Community center" to="Community center" method="_on_mouse_exited"]
+[connection signal="clicked" from="Justice department" to="." method="_on_justice_department_clicked"]
+[connection signal="mouse_entered" from="Justice department" to="Justice department" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Justice department" to="Justice department" method="_on_mouse_exited"]
+[connection signal="clicked" from="Synagogue" to="." method="_on_synagogue_clicked"]
+[connection signal="mouse_entered" from="Synagogue" to="Synagogue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Synagogue" to="Synagogue" method="_on_mouse_exited"]
+[connection signal="clicked" from="Cop/cop" to="." method="_on_cop_clicked"]
+[connection signal="mouse_entered" from="Cop/cop" to="Cop/cop" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cop/cop" to="Cop/cop" method="_on_mouse_exited"]

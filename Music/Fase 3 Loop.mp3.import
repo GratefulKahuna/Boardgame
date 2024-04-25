@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfncolkwvxmwx"
+path="res://.godot/imported/Fase 3 Loop.mp3-0f1b5b815cb82b5e53f8dc4477d2dcb0.mp3str"
+
+[deps]
+
+source_file="res://Music/Fase 3 Loop.mp3"
+dest_files=["res://.godot/imported/Fase 3 Loop.mp3-0f1b5b815cb82b5e53f8dc4477d2dcb0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

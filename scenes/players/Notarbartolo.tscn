@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3lfwq0rcjehf"]
+
+[ext_resource type="Texture2D" uid="uid://b2rxx5c68ormx" path="res://images/players/Notarbartolo.png" id="1_5etfe"]
+
+[node name="player_1" type="Sprite2D" groups=["Notarbartolo"]]
+position = Vector2(0, -29)
+texture = ExtResource("1_5etfe")

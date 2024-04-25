@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg3bu5nm8gqfj"
+path="res://.godot/imported/Fase 1 Loop.mp3-af430318fe52d074202fa23e278dd607.mp3str"
+
+[deps]
+
+source_file="res://Music/Fase 1 Loop.mp3"
+dest_files=["res://.godot/imported/Fase 1 Loop.mp3-af430318fe52d074202fa23e278dd607.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

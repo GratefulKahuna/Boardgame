@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vg5ofi18qnfp"]
+
+[ext_resource type="Texture2D" uid="uid://btowadyulyb2h" path="res://images/players/King_of_keys.png" id="1_4km3s"]
+
+[node name="Player2-modified" type="Sprite2D" groups=["King of keys"]]
+position = Vector2(-21, 27)
+texture = ExtResource("1_4km3s")

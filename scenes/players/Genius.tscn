@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://grrnl7gvoosf"]
+
+[ext_resource type="Texture2D" uid="uid://djkrcmnlehvlp" path="res://images/players/Genius.png" id="1_o0wcu"]
+
+[node name="Player2-modified" type="Sprite2D" groups=["Genius"]]
+position = Vector2(31, -7)
+texture = ExtResource("1_o0wcu")

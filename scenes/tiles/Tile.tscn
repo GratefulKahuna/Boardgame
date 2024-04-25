@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn8aotmmiw7tk"]
+
+[ext_resource type="Texture2D" uid="uid://dxglitkpkpu3p" path="res://images/tiles/tile.png" id="1_4lxiv"]
+[ext_resource type="Script" path="res://scenes/tiles/Tile.gd" id="2_g0s0r"]
+
+[node name="Tile" type="Sprite2D"]
+position = Vector2(61, 51)
+texture = ExtResource("1_4lxiv")
+script = ExtResource("2_g0s0r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-31, -48, 31, -48, 58, 1, 32, 48, -32, 48, -58, 1)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

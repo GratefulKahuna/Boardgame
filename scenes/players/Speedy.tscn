@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://blr2kc8kkrec6"]
+
+[ext_resource type="Texture2D" uid="uid://ii4y4w8xdo5e" path="res://images/players/Speedy.png" id="1_mtcgo"]
+
+[node name="Player2-modified" type="Sprite2D" groups=["Speedy"]]
+position = Vector2(21, 27)
+texture = ExtResource("1_mtcgo")

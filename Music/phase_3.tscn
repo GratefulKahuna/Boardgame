@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1l0s2j334qxl"]
+
+[ext_resource type="AudioStream" uid="uid://cfncolkwvxmwx" path="res://Music/Fase 3 Loop.mp3" id="1_vmooj"]
+
+[node name="Phase_3" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vmooj")

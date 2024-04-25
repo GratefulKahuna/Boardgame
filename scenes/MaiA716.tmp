@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://clsvl1lg2rkih"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_ip28x"]
+[ext_resource type="Texture2D" uid="uid://bayr37usbt3i6" path="res://images/board_bg.png" id="1_ir0mk"]
+[ext_resource type="PackedScene" uid="uid://dn8aotmmiw7tk" path="res://scenes/tiles/Tile.tscn" id="2_08b25"]
+[ext_resource type="Texture2D" uid="uid://b5378bi2icye1" path="res://images/tiles/numbers/12.png" id="4_4a6hk"]
+[ext_resource type="Texture2D" uid="uid://b6i21h64v607n" path="res://images/tiles/base_tile-modified.png" id="5_th7ui"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ip28x")
+
+[node name="BoardBg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ir0mk")
+
+[node name="Tile" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1185, 388)
+
+[node name="tile_1" type="Sprite2D" parent="Tile"]
+texture = ExtResource("4_4a6hk")
+
+[node name="Tile2" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1279, 336.5)
+
+[node name="Tile3" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1372, 389)
+
+[node name="Tile4" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1373, 491)
+
+[node name="Tile5" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1279, 540.5)
+
+[node name="Tile6" parent="." instance=ExtResource("2_08b25")]
+position = Vector2(1184, 490)
+
+[node name="Base_tile" type="Sprite2D" parent="."]
+position = Vector2(1279, 439)
+texture = ExtResource("5_th7ui")
+
+[connection signal="clicked" from="Tile" to="." method="_on_tile_clicked"]
+[connection signal="clicked" from="Tile2" to="." method="_on_tile_3_clicked"]

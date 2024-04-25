@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhth0po7roxuq"]
+
+[ext_resource type="Texture2D" uid="uid://by0g0ulr4mol8" path="res://images/players/Monster.png" id="1_lplrh"]
+
+[node name="Player2-modified" type="Sprite2D" groups=["Monster"]]
+position = Vector2(-31, -7)
+texture = ExtResource("1_lplrh")

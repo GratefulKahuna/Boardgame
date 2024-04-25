@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0xucpctqx5ay"]
+
+[ext_resource type="AudioStream" uid="uid://dg3bu5nm8gqfj" path="res://Music/Fase 1 Loop.mp3" id="1_nahka"]
+
+[node name="Phase_1" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_nahka")
+autoplay = true
