@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://clsvl1lg2rkih"]
+[gd_scene load_steps=35 format=3 uid="uid://clsvl1lg2rkih"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_ip28x"]
 [ext_resource type="Texture2D" uid="uid://d2nnatd8qc6tx" path="res://images/Map_bg.png" id="2_8vh4i"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://1l0s2j334qxl" path="res://Music/phase_3.tscn" id="23_mri8g"]
 [ext_resource type="Texture2D" uid="uid://dplhjvdpd1u0m" path="res://images/Alarm_meter/Zz_clear.png" id="24_qmo2u"]
 [ext_resource type="Texture2D" uid="uid://bjcwbmpulwbdw" path="res://images/Alarm_meter/cop_outline-modified.png" id="25_f5vej"]
+[ext_resource type="Texture2D" uid="uid://61oa5i1crwsu" path="res://images/undo.png" id="26_6ix43"]
+[ext_resource type="PackedScene" uid="uid://bu8w6cq8f462k" path="res://Music/alarm.tscn" id="26_rqf02"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33fkc"]
 radius = 73.0
@@ -83,6 +85,9 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivan5"]
+size = Vector2(565, 630)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ip28x")
@@ -569,6 +574,23 @@ visible = false
 position = Vector2(203, 574)
 texture = ExtResource("25_f5vej")
 
+[node name="redo" type="Sprite2D" parent="."]
+position = Vector2(96, 90.0001)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("26_6ix43")
+
+[node name="redo_area" type="Area2D" parent="redo"]
+position = Vector2(-1060, -1472.5)
+script = ExtResource("6_62c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="redo/redo_area"]
+position = Vector2(1082.5, 1485)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ivan5")
+
+[node name="Alarm" parent="." instance=ExtResource("26_rqf02")]
+position = Vector2(961, 453)
+
 [connection signal="clicked" from="Die-1/die_area" to="." method="_on_die_area_clicked"]
 [connection signal="mouse_entered" from="Die-1/die_area" to="Die-1/die_area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Die-1/die_area" to="Die-1/die_area" method="_on_mouse_exited"]
@@ -695,3 +717,6 @@ texture = ExtResource("25_f5vej")
 [connection signal="clicked" from="Cop/cop" to="." method="_on_cop_clicked"]
 [connection signal="mouse_entered" from="Cop/cop" to="Cop/cop" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cop/cop" to="Cop/cop" method="_on_mouse_exited"]
+[connection signal="clicked" from="redo/redo_area" to="." method="_on_redo_area_clicked"]
+[connection signal="mouse_entered" from="redo/redo_area" to="redo/redo_area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="redo/redo_area" to="redo/redo_area" method="_on_mouse_exited"]

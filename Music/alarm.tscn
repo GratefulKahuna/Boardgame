@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu8w6cq8f462k"]
+
+[ext_resource type="AudioStream" uid="uid://cs04koh8hijiv" path="res://Music/Fire Alarm Bell.mp3" id="1_vghtb"]
+
+[node name="Alarm" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vghtb")

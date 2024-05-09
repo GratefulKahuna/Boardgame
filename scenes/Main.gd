@@ -11,6 +11,12 @@ var all_players = [Notarbartolo, Genius, Speedy, King_of_keys, Monster]
 var current_player_index = 0
 var can_drag = true
 
+var all_players_index = {"Notarbartolo": 0, "Genius": 1, "Speedy": 2, "King of keys": 3, "Monster": 4}
+
+var tile_stack = []
+var tile_value_stack = []
+var player_stack = []
+
 var alarm_max = randi_range(4, 7)
 var alarm_level = 0
 
@@ -19,6 +25,7 @@ var alarm_level = 0
 @onready var phase1_music = $Phase_1
 @onready var phase2_music = $Phase_2
 @onready var phase3_music = $Phase_3
+@onready var alarm = $Alarm
 var current_music = "phase1"
 
 @onready var label = $Label
@@ -104,10 +111,11 @@ coll_dice12]
 
 @onready var choose_dragged_screen = $choose_dragged
 
-enum state {CHOOSING_TILE, DRAGGING_PLAYER, UNLOCK_ROLLING, INACTIVE}
+enum state {CHOOSING_TILE, DRAGGING_PLAYER, UNLOCK_ROLLING, INACTIVE, SECOND_PHASE}
 
 var current_state = state.CHOOSING_TILE
 var rolled_number = 0
+var alarm_tripped = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -123,7 +131,6 @@ func _ready():
 	choose_tile_text()
 	caution_level_label.push_color("green")
 	caution_level_label.append_text("Clear")
-	print(alarm_max)
 
 func toggle_dice_areas():
 	for die in all_dice:
@@ -154,7 +161,14 @@ func _process(delta):
 		label.clear()
 		label.text = "All tiles unlocked"
 		current_state = state.INACTIVE
-	
+	if alarm_level >= alarm_max and not alarm_tripped:
+		label.clear()
+		label.append_text("Alarm tripped!!!")
+		alarm.play()
+		current_state = state.SECOND_PHASE
+		alarm_tripped = true
+		
+		
 	if alarm_level >= (alarm_max / 3):
 		if alarm_level >= (alarm_max / 3) * 2 and current_music == "phase2":
 			phase2_music.stop()
@@ -175,15 +189,17 @@ func _process(delta):
 		
 
 func move_player(tile, str):
+	tile_stack.push_back(Global.player_tile_dict[Global.current_player])
+	player_stack.push_back(Global.current_player)
+	
 	if Global.player_tile_dict[Global.current_player] != tile:
 		Global.player_tile_dict[Global.current_player].get_tree().get_nodes_in_group(Global.current_player)[0].queue_free()
-		
 		Global.player_tile_dict[Global.current_player] = tile
 		Global.player_tile_str_dict[Global.current_player] = str
 		tile.add_child(all_players[current_player_index].instantiate())
 	
 		Global.player_dict[Global.current_player] = Global.tile_dict[Global.player_tile_str_dict[Global.current_player]]
-	
+
 	if(Global.current_player == "Monster"):
 		toggle_dragged_screen()
 		current_state = state.DRAGGING_PLAYER
@@ -195,6 +211,8 @@ func move_player(tile, str):
 	
 func reduce_number(number):
 	if(Global.player_tile_str_dict[Global.current_player] != "Antwerp_world_diamond_centre"):
+		tile_value_stack.push_back(Global.player_dict[Global.current_player])
+		player_stack.push_back(Global.current_player)
 		
 		var current_num = Global.player_dict[Global.current_player] - number
 		if (current_num <= 0):
@@ -282,6 +300,8 @@ func _on_die_area_12_clicked():
 
 
 func drag_player(player_to_drag, player_to_drag_index):
+	tile_stack.push_back(Global.player_tile_dict[player_to_drag])
+	player_stack.push_back(player_to_drag)
 	Global.player_tile_dict[player_to_drag].get_tree().get_nodes_in_group(player_to_drag)[0].queue_free()
 	
 	Global.player_tile_dict[player_to_drag] = Global.player_tile_dict["Monster"]
@@ -321,6 +341,7 @@ func _on_king_of_keys_choice_clicked():
 
 func _on_nobody_choice_clicked():
 	if	(current_state == state.DRAGGING_PLAYER):
+		player_stack.push_back("nobody")
 		toggle_dragged_screen()
 		current_player_index = 0
 		Global.nextPlayer()
@@ -454,3 +475,63 @@ func _on_cop_clicked():
 	cop_outline.visible = true
 	await get_tree().create_timer(0.1).timeout
 	cop_outline.visible = false
+
+
+func _on_redo_area_clicked():
+	if player_stack.size() < 1:
+		return
+	if current_player_index == 0 and current_state == state.UNLOCK_ROLLING:
+		Global.current_player = "Monster"
+		var dragged_player = player_stack.pop_back()
+		if dragged_player == "Notarbartolo":
+			player_stack.pop_back()
+			var previous_value = tile_value_stack.pop_back()
+			Global.player_dict[dragged_player] = previous_value
+			Global.tile_dict[Global.player_tile_str_dict[dragged_player]] = previous_value
+			Global.player_tile_dict[dragged_player].set_texture(load(str("res://images/tiles/numbers/", previous_value, ".png")))
+		elif dragged_player != "nobody":
+			var dragged_tile = tile_stack.pop_back()
+			
+			Global.player_tile_dict[dragged_player].get_tree().get_nodes_in_group(dragged_player)[0].queue_free()
+			Global.player_tile_dict[dragged_player] = dragged_tile
+			dragged_tile.add_child(all_players[all_players_index[dragged_player]].instantiate())
+		
+		toggle_dragged_screen()
+		current_state = state.DRAGGING_PLAYER
+		current_player_index = 4
+		toggle_dice_areas()
+		choose_tile_text()
+				
+	elif (current_state == state.CHOOSING_TILE or current_state == state.DRAGGING_PLAYER) and not (player_stack.size() > 1 and current_player_index == 0):
+		if tile_stack.size() > 0:
+			Global.current_player = player_stack.pop_back()
+			var previous_tile = tile_stack.pop_back()
+			Global.player_tile_dict[Global.current_player].get_tree().get_nodes_in_group(Global.current_player)[0].queue_free()
+			Global.player_tile_dict[Global.current_player] = previous_tile
+			if current_player_index != 0:
+				
+				if current_state == state.DRAGGING_PLAYER:
+					toggle_dragged_screen()
+					current_state = state.CHOOSING_TILE
+				else:
+					current_player_index -= 1
+				previous_tile.add_child(all_players[current_player_index].instantiate())
+				choose_tile_text()
+			
+
+	elif current_player_index == 0 and current_state == state.CHOOSING_TILE and player_stack.size() > 1 or current_state == state.UNLOCK_ROLLING:
+
+			Global.current_player = player_stack.pop_back()
+			var previous_value = tile_value_stack.pop_back()
+			Global.player_dict[Global.current_player] = previous_value
+			Global.tile_dict[Global.player_tile_str_dict[Global.current_player]] = previous_value
+			Global.player_tile_dict[Global.current_player].set_texture(load(str("res://images/tiles/numbers/", previous_value, ".png")))
+			if current_player_index == 0:
+				current_player_index = 4
+				current_state = state.UNLOCK_ROLLING
+				toggle_dice_areas()
+			else:
+				current_player_index -= 1
+			print("here?")
+			choose_dice_text()
+	
