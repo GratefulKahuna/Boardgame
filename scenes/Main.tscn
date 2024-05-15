@@ -748,6 +748,7 @@ position = Vector2(961, 453)
 [connection signal="clicked" from="Diamond dealer" to="." method="_on_diamond_dealer_clicked"]
 [connection signal="mouse_entered" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_exited"]
+[connection signal="clicked" from="Diamond dealer2" to="." method="_on_diamond_dealer_2_clicked"]
 [connection signal="mouse_entered" from="Diamond dealer2" to="Diamond dealer2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Diamond dealer2" to="Diamond dealer2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Hotel" to="." method="_on_hotel_clicked"]
