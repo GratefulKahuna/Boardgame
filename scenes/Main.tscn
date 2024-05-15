@@ -390,30 +390,61 @@ texture = ExtResource("19_i2wmj")
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jeweler"]
-polygon = PackedVector2Array(1441, 388, 1528, 389, 1533, 557, 1392, 578, 1377, 551, 1350, 532)
+polygon = PackedVector2Array(1386, 478, 1531, 487, 1533, 557, 1392, 578, 1377, 551, 1350, 532)
 
 [node name="1" type="Sprite2D" parent="Jeweler"]
-position = Vector2(1463, 480)
+position = Vector2(1448, 522)
+texture = ExtResource("19_i2wmj")
+
+[node name="Jeweler2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jeweler2"]
+polygon = PackedVector2Array(1442, 387, 1527, 391, 1534, 480, 1395, 469)
+
+[node name="1" type="Sprite2D" parent="Jeweler2"]
+position = Vector2(1481, 430)
 texture = ExtResource("19_i2wmj")
 
 [node name="Diamond dealer" type="Area2D" parent="."]
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Diamond dealer"]
-polygon = PackedVector2Array(1596, 245, 1580, 291, 1655, 324, 1741, 378, 1807, 421, 1831, 423, 1841, 362, 1821, 255)
+polygon = PackedVector2Array(1772, 253, 1725, 367, 1807, 421, 1831, 423, 1841, 362, 1821, 255)
 
 [node name="1" type="Sprite2D" parent="Diamond dealer"]
-position = Vector2(1751, 314)
+position = Vector2(1783, 336)
+texture = ExtResource("19_i2wmj")
+
+[node name="Diamond dealer2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Diamond dealer2"]
+polygon = PackedVector2Array(1596, 249, 1576, 293, 1653, 320, 1720, 362, 1759, 251)
+
+[node name="1" type="Sprite2D" parent="Diamond dealer2"]
+position = Vector2(1671, 287)
 texture = ExtResource("19_i2wmj")
 
 [node name="Hotel" type="Area2D" parent="."]
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hotel"]
-polygon = PackedVector2Array(1574, 305, 1538, 356, 1542, 446, 1675, 409, 1710, 371, 1650, 326)
+polygon = PackedVector2Array(1574, 305, 1538, 356, 1542, 446, 1609, 429, 1621, 317)
 
 [node name="1" type="Sprite2D" parent="Hotel"]
-position = Vector2(1606, 368)
+position = Vector2(1581, 370)
+texture = ExtResource("19_i2wmj")
+
+[node name="Hotel2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hotel2"]
+position = Vector2(75, -1)
+polygon = PackedVector2Array(1553, 318, 1544, 428, 1633, 384, 1631, 365)
+
+[node name="1" type="Sprite2D" parent="Hotel2"]
+position = Vector2(1653, 370)
 texture = ExtResource("19_i2wmj")
 
 [node name="Antwerp world diamond centre" type="Area2D" parent="."]
@@ -427,40 +458,80 @@ polygon = PackedVector2Array(-70, -51, 52, -82, 81, 11, 111, 47, 137, 64, -94, 6
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bank"]
-polygon = PackedVector2Array(1670, 418, 1712, 398, 1722, 374, 1806, 431, 1828, 433, 1838, 477, 1835, 543, 1785, 565, 1732, 552, 1695, 506)
+polygon = PackedVector2Array(1670, 418, 1712, 398, 1722, 374, 1806, 431, 1828, 433, 1835, 472, 1686, 472)
 
 [node name="1" type="Sprite2D" parent="Bank"]
-position = Vector2(1761, 474)
+position = Vector2(1736, 434)
+texture = ExtResource("19_i2wmj")
+
+[node name="Bank2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bank2"]
+polygon = PackedVector2Array(1685, 484, 1838, 477, 1835, 543, 1785, 565, 1732, 552, 1695, 506)
+
+[node name="1" type="Sprite2D" parent="Bank2"]
+position = Vector2(1769, 512)
 texture = ExtResource("19_i2wmj")
 
 [node name="Gallery" type="Area2D" parent="."]
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gallery"]
-polygon = PackedVector2Array(1380, 595, 1496, 580, 1518, 598, 1511, 744, 1390, 722)
+polygon = PackedVector2Array(1380, 595, 1496, 580, 1518, 598, 1520, 666, 1386, 654)
 
 [node name="1" type="Sprite2D" parent="Gallery"]
-position = Vector2(1453, 654)
+position = Vector2(1450, 624)
+texture = ExtResource("19_i2wmj")
+
+[node name="Gallery2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gallery2"]
+polygon = PackedVector2Array(1387, 660, 1516, 670, 1510, 748, 1392, 723)
+
+[node name="1" type="Sprite2D" parent="Gallery2"]
+position = Vector2(1450, 695)
 texture = ExtResource("19_i2wmj")
 
 [node name="Police station" type="Area2D" parent="."]
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Police station"]
-polygon = PackedVector2Array(1531, 598, 1778, 597, 1817, 572, 1828, 577, 1822, 688, 1792, 696, 1701, 683, 1664, 669, 1617, 685, 1536, 683)
+polygon = PackedVector2Array(1677, 601, 1778, 597, 1817, 572, 1828, 577, 1822, 688, 1792, 696, 1725, 690, 1678, 670)
 
 [node name="1" type="Sprite2D" parent="Police station"]
-position = Vector2(1681, 634)
+position = Vector2(1753, 640)
+texture = ExtResource("19_i2wmj")
+
+[node name="Police station2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Police station2"]
+polygon = PackedVector2Array(1530, 603, 1673, 600, 1673, 672, 1614, 685, 1536, 687, 1534, 655)
+
+[node name="1" type="Sprite2D" parent="Police station2"]
+position = Vector2(1600, 640)
 texture = ExtResource("19_i2wmj")
 
 [node name="Gold dealer" type="Area2D" parent="."]
 script = ExtResource("18_8c3lj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gold dealer"]
-polygon = PackedVector2Array(1533, 691, 1521, 766, 1810, 784, 1825, 711, 1714, 704, 1667, 683, 1576, 696)
+polygon = PackedVector2Array(1664, 775, 1810, 784, 1825, 711, 1714, 704, 1665, 683)
 
 [node name="1" type="Sprite2D" parent="Gold dealer"]
-position = Vector2(1661, 728)
+position = Vector2(1741, 737)
+texture = ExtResource("19_i2wmj")
+
+[node name="Gold dealer2" type="Area2D" parent="."]
+script = ExtResource("18_8c3lj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gold dealer2"]
+polygon = PackedVector2Array(1525, 767, 1657, 774, 1659, 683, 1587, 698, 1536, 692)
+
+[node name="1" type="Sprite2D" parent="Gold dealer2"]
+position = Vector2(1598, 729)
 texture = ExtResource("19_i2wmj")
 
 [node name="Jewelry store" type="Area2D" parent="."]
@@ -585,7 +656,6 @@ script = ExtResource("6_62c75")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="redo/redo_area"]
 position = Vector2(1082.5, 1485)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ivan5")
 
 [node name="Alarm" parent="." instance=ExtResource("26_rqf02")]
@@ -672,27 +742,47 @@ position = Vector2(961, 453)
 [connection signal="clicked" from="Jeweler" to="." method="_on_jeweler_clicked"]
 [connection signal="mouse_entered" from="Jeweler" to="Jeweler" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Jeweler" to="Jeweler" method="_on_mouse_exited"]
+[connection signal="clicked" from="Jeweler2" to="." method="_on_jeweler_2_clicked"]
+[connection signal="mouse_entered" from="Jeweler2" to="Jeweler2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jeweler2" to="Jeweler2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Diamond dealer" to="." method="_on_diamond_dealer_clicked"]
 [connection signal="mouse_entered" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Diamond dealer" to="Diamond dealer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Diamond dealer2" to="Diamond dealer2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Diamond dealer2" to="Diamond dealer2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Hotel" to="." method="_on_hotel_clicked"]
 [connection signal="mouse_entered" from="Hotel" to="Hotel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Hotel" to="Hotel" method="_on_mouse_exited"]
+[connection signal="clicked" from="Hotel2" to="." method="_on_hotel_2_clicked"]
+[connection signal="mouse_entered" from="Hotel2" to="Hotel2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hotel2" to="Hotel2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Antwerp world diamond centre" to="." method="_on_antwerp_world_diamond_centre_clicked"]
 [connection signal="mouse_entered" from="Antwerp world diamond centre" to="Antwerp world diamond centre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Antwerp world diamond centre" to="Antwerp world diamond centre" method="_on_mouse_exited"]
 [connection signal="clicked" from="Bank" to="." method="_on_bank_clicked"]
 [connection signal="mouse_entered" from="Bank" to="Bank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Bank" to="Bank" method="_on_mouse_exited"]
+[connection signal="clicked" from="Bank2" to="." method="_on_bank_2_clicked"]
+[connection signal="mouse_entered" from="Bank2" to="Bank2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bank2" to="Bank2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Gallery" to="." method="_on_gallery_clicked"]
 [connection signal="mouse_entered" from="Gallery" to="Gallery" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Gallery" to="Gallery" method="_on_mouse_exited"]
+[connection signal="clicked" from="Gallery2" to="." method="_on_gallery_2_clicked"]
+[connection signal="mouse_entered" from="Gallery2" to="Gallery2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Gallery2" to="Gallery2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Police station" to="." method="_on_police_station_clicked"]
 [connection signal="mouse_entered" from="Police station" to="Police station" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Police station" to="Police station" method="_on_mouse_exited"]
+[connection signal="clicked" from="Police station2" to="." method="_on_police_station_2_clicked"]
+[connection signal="mouse_entered" from="Police station2" to="Police station2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Police station2" to="Police station2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Gold dealer" to="." method="_on_gold_dealer_clicked"]
 [connection signal="mouse_entered" from="Gold dealer" to="Gold dealer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Gold dealer" to="Gold dealer" method="_on_mouse_exited"]
+[connection signal="clicked" from="Gold dealer2" to="." method="_on_gold_dealer_2_clicked"]
+[connection signal="mouse_entered" from="Gold dealer2" to="Gold dealer2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Gold dealer2" to="Gold dealer2" method="_on_mouse_exited"]
 [connection signal="clicked" from="Jewelry store" to="." method="_on_jewelry_store_clicked"]
 [connection signal="mouse_entered" from="Jewelry store" to="Jewelry store" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Jewelry store" to="Jewelry store" method="_on_mouse_exited"]

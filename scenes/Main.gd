@@ -42,12 +42,19 @@ var current_music = "phase1"
 @onready var Bar = $"Bar/1"
 @onready var Gold_smth = $"Gold smith/1"
 @onready var Jeweler = $"Jeweler/1"
+@onready var Jeweler2 = $"Jeweler2/1"
 @onready var Diamond_dealer = $"Diamond dealer/1"
+@onready var Diamond_dealer2 = $"Diamond dealer2/1"
 @onready var Hotel = $"Hotel/1"
+@onready var Hotel2 = $"Hotel2/1"
 @onready var Bank = $"Bank/1"
+@onready var Bank2 = $"Bank2/1"
 @onready var Gallery = $"Gallery/1"
+@onready var Gallery2 = $"Gallery2/1"
 @onready var Police_station = $"Police station/1"
+@onready var Police_station2 = $"Police station2/1"
 @onready var Gold_dealer = $"Gold dealer/1"
+@onready var Gold_dealer2 = $"Gold dealer2/1"
 @onready var Jewelry_store = $"Jewelry store/1"
 @onready var Locksmith = $"Locksmith/1"
 @onready var Jewelry_buyer = $"Jewelry buyer/1"
@@ -68,12 +75,19 @@ Office,
 Bar,
 Gold_smth,
 Jeweler,
+Jeweler2,
 Diamond_dealer,
+Diamond_dealer2,
 Hotel,
+Hotel2,
 Bank,
+Bank2,
 Gallery,
+Gallery2,
 Police_station,
+Police_station2,
 Gold_dealer,
+Gold_dealer2,
 Jewelry_store,
 Locksmith,
 Jewelry_buyer,
@@ -399,15 +413,27 @@ func _on_jeweler_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Jeweler, "Jeweler")
 
+func _on_jeweler_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Jeweler2, "Jeweler2")
 
 func _on_diamond_dealer_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Diamond_dealer, "Diamond_dealer")
+		
+		
+func _on_diamond_dealer_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Diamond_dealer2, "Diamond_dealer2")
 
 
 func _on_hotel_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Hotel, "Hotel")
+		
+func _on_hotel_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Hotel2, "Hotel2")
 
 
 func _on_antwerp_world_diamond_centre_clicked():
@@ -418,21 +444,37 @@ func _on_antwerp_world_diamond_centre_clicked():
 func _on_bank_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Bank, "Bank")
+		
+		
+func _on_bank_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Bank2, "Bank2")
 
 
 func _on_gallery_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Gallery, "Gallery")
+		
+func _on_gallery_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Gallery2, "Gallery2")
 
 
 func _on_police_station_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Police_station, "Police_station")
 
+func _on_police_station_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Police_station2, "Police_station2")
 
 func _on_gold_dealer_clicked():
 	if	(current_state == state.CHOOSING_TILE):
 		move_player(Gold_dealer, "Gold_dealer")
+
+func _on_gold_dealer_2_clicked():
+	if	(current_state == state.CHOOSING_TILE):
+		move_player(Gold_dealer2, "Gold_dealer2")
 
 
 func _on_jewelry_store_clicked():
@@ -532,6 +574,11 @@ func _on_redo_area_clicked():
 				toggle_dice_areas()
 			else:
 				current_player_index -= 1
-			print("here?")
 			choose_dice_text()
 	
+
+
+
+
+
+
